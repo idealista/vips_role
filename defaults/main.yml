@@ -1,0 +1,12 @@
+---
+## General
+
+vips_version: 8.5.9
+
+# Files & Paths
+vips_root_path: /opt/vips
+
+
+## Miscellaneous
+# Set true to force the download and installation of the package
+vips_force_reinstall: false

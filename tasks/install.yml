@@ -1,0 +1,26 @@
+---
+
+- name: VIPS | Installing dependencies
+  apt:
+    pkg: "{{ item }}"
+    state: present
+  with_items: "{{ vips_required_libs }}"
+
+- name: VIPS | Check vips version
+  command: vips -v
+  register: vips_check
+  changed_when: false
+  ignore_errors: true
+
+- name: VIPS | Ensure paths
+  file:
+    dest: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ vips_root_path }}"
+    - "{{ vips_tmp }}"
+
+- name: VIPS | Install libvips from sources
+  include: install-sources.yml
+  when:
+    - vips_force_reinstall or vips_check|failed or 'vips-' + vips_version not in vips_check.stdout

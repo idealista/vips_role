@@ -1,0 +1,27 @@
+---
+
+- name: VIPS | Download sources package
+  get_url:
+    url: "{{ vips_sources_url }}"
+    dest: "{{ vips_tmp }}"
+
+- name: VIPS | Extract sources package
+  unarchive:
+    copy: no
+    src: "{{ vips_tmp }}/{{ vips_sources_package }}"
+    dest: "{{ vips_root_path }}"
+
+- name: VIPS | Build sources
+  command: "{{ item }}"
+  args:
+    chdir: "{{ vips_root_path }}/vips-{{ vips_version }}"
+  with_items:
+    - ./configure
+    - make
+    - make install
+  tags:
+    skip_ansible_lint
+
+- name: VIPS | Update glib headers
+  shell: cp /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h /usr/include; ldconfig
+  changed_when: false

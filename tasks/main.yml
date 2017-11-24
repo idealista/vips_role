@@ -1,0 +1,6 @@
+---
+
+- name: VIPS | Install
+  include: install.yml
+  tags:
+    - install
