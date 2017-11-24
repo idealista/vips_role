@@ -1,0 +1,15 @@
+vips_required_libs:
+  - build-essential
+  - pkg-config
+  - libexpat1-dev
+  - libglib2.0-dev
+  - libexif-dev
+  - libmagick-dev
+  - liborc-0.4-0
+  - liborc-0.4-dev
+
+vips_sources_package: "vips-{{ vips_version }}.tar.gz"
+
+vips_sources_url: "https://github.com/jcupitt/libvips/releases/download/v{{ vips_version }}/{{ vips_sources_package }}"
+
+vips_tmp: /buildvips
