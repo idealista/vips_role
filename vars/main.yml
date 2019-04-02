@@ -10,6 +10,6 @@ vips_required_libs:
 
 vips_sources_package: "vips-{{ vips_version }}.tar.gz"
 
-vips_sources_url: "https://github.com/jcupitt/libvips/releases/download/v{{ vips_version }}/{{ vips_sources_package }}"
+vips_sources_url: "https://github.com/libvips/libvips/releases/download/v{{ vips_version }}/{{ vips_sources_package }}"
 
 vips_tmp: /buildvips
