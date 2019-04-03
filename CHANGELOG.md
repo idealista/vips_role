@@ -5,7 +5,6 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 ## [Unreleased](https://github.com/idealista/vips_role/tree/develop)
 
 ## [1.0.1](https://github.com/idealista/vips_role/tree/1.0.1)
-### Added
 ### Changed
 - *(https://github.com/idealista/vips_role/pull/4) Rename role to vips_role* @jnogol
 - *(https://github.com/idealista/vips_role/pull/4) Use of pipenv and Debian Stretch base image for tests* @jnogol
