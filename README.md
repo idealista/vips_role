@@ -1,6 +1,6 @@
-![Logo](https://raw.githubusercontent.com/idealista/vips-role/master/logo.gif)
+![Logo](https://raw.githubusercontent.com/idealista/vips_role/master/logo.gif)
 
-[![Build Status](https://travis-ci.org/idealista/vips-role.svg?branch=master)](https://travis-ci.org/idealista/vips-role)
+[![Build Status](https://travis-ci.org/idealista/vips_role.svg?branch=master)](https://travis-ci.org/idealista/vips_role)
 # Vips Ansible role
 
 This ansible role installs libvips image processing library in a debian environment.
@@ -18,7 +18,7 @@ This ansible role installs libvips image processing library in a debian environm
 
 ## Getting Started
 
-These instructions will get you a copy of the role for your ansible playbook. Once launched, it will install [libvips](http://jcupitt.github.io/libvips/) libraries.
+These instructions will get you a copy of the role for your ansible playbook. Once launched, it will install [libvips](https://libvips.github.io/libvips/) libraries.
 
 ### Prerequisities
 
@@ -32,7 +32,7 @@ For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Docker]
 Create or add to your roles dependency file (e.g requirements.yml):
 
 ```
-- src: idealista.vips-role
+- src: idealista.vips_role
   version: 1.0.0
   name: vips
 ```
@@ -60,7 +60,8 @@ Look to the [defaults](defaults/main.yml) properties file to see the possible co
 ## Testing
 
 ```sh
-molecule test
+pipenv install -r test-requirements.txt --python 2.7
+pipenv run molecule test --driver docker
 ```
 
 ## Built With
@@ -74,7 +75,7 @@ molecule test
 
 ## Versioning
 
-For the versions available, see the [tags on this repository](https://github.com/idealista/vips-role/tags).
+For the versions available, see the [tags on this repository](https://github.com/idealista/vips_role/tags).
 
 Additionaly you can see what change in each version in the [CHANGELOG.md](CHANGELOG.md) file.
 
@@ -82,7 +83,7 @@ Additionaly you can see what change in each version in the [CHANGELOG.md](CHANGE
 
 * **Idealista** - *Work with* - [idealista](https://github.com/idealista)
 
-See also the list of [contributors](https://github.com/idealista/vips-role/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/idealista/vips_role/contributors) who participated in this project.
 
 ## License
 
