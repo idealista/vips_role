@@ -35,23 +35,16 @@ docker:
     - name: vips.cont
       ansible_groups:
         - vips
-      image: geerlingguy/docker-debian9-ansible
-      image_version: latest
-
-      privileged: True
-      cap_add:
-        - SYS_ADMIN
-      volume_mounts:
-        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
-      command: '/lib/systemd/systemd'
+      image: debian
+      image_version: stretch
 
 # configuration options for the internal call to vagrant
 vagrant:
-  # molecule's --platform option will look for these names
   raw_config_args:
     - "landrush.enabled = true"
     - "landrush.tld = 'vm'"
     - "landrush.guest_redirect_dns = false"
+  # molecule's --platform option will look for these names
   platforms:
     - name: Debian9
       box: debian/stretch64

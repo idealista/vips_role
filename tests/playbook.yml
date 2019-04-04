@@ -2,4 +2,4 @@
 
 - hosts: vips
   roles:
-    - vips-role
+    - vips_role
