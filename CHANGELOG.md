@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 - *(https://github.com/idealista/vips_role/pull/4) Use of pipenv and Debian Stretch base image for tests* @jnogol
 ### Fixed
 - *(https://github.com/idealista/vips_role/pull/3) Update libvips source URL* @chadwilken
+- *(https://github.com/idealista/vips_role/pull/6) Fix Travis deploy installing ca-certificates package* @jnogol
 
 ## [1.0.0](https://github.com/idealista/vips_role/tree/1.0.0)
 ### Added
