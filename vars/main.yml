@@ -7,9 +7,10 @@ vips_required_libs:
   - libmagick-dev
   - liborc-0.4-0
   - liborc-0.4-dev
+  - ca-certificates
 
 vips_sources_package: "vips-{{ vips_version }}.tar.gz"
 
-vips_sources_url: "https://github.com/jcupitt/libvips/releases/download/v{{ vips_version }}/{{ vips_sources_package }}"
+vips_sources_url: "https://github.com/libvips/libvips/releases/download/v{{ vips_version }}/{{ vips_sources_package }}"
 
 vips_tmp: /buildvips
