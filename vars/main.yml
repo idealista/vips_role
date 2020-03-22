@@ -1,3 +1,5 @@
+---
+
 vips_required_libs:
   - build-essential
   - pkg-config

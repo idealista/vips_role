@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased](https://github.com/idealista/vips_role/tree/develop)
 
+### Changed
+- *(https://github.com/idealista/vips_role/pull/10) Upgrade Ansible, Molecule and Goss* @dortegau
+
 ## [1.0.1](https://github.com/idealista/vips_role/tree/1.0.1)
 ### Changed
 - *(https://github.com/idealista/vips_role/pull/4) Rename role to vips_role* @jnogol

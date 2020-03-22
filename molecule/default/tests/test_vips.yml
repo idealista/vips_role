@@ -2,6 +2,6 @@ command:
   vips -v:
     exit-status: 0
     stdout:
-      - "/vips-{{ vips_version}}/"
+      - "/vips-8.9.1/"
     stderr: []
     timeout: 10000

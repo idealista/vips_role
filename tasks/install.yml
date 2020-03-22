@@ -2,9 +2,8 @@
 
 - name: VIPS | Installing dependencies
   apt:
-    pkg: "{{ item }}"
+    pkg: "{{ vips_required_libs }}"
     state: present
-  with_items: "{{ vips_required_libs }}"
 
 - name: VIPS | Check vips version
   command: vips -v
@@ -21,6 +20,6 @@
     - "{{ vips_tmp }}"
 
 - name: VIPS | Install libvips from sources
-  include: install-sources.yml
+  include: install-from-sources.yml
   when:
-    - vips_force_reinstall or vips_check|failed or 'vips-' + vips_version not in vips_check.stdout
+    - vips_check is failed or 'vips-' + vips_version not in vips_check.stdout
