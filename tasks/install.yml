@@ -1,6 +1,6 @@
 ---
 
-- name: VIPS | Installing dependencies
+- name: VIPS | Installing required dependencies
   apt:
     pkg: "{{ vips_required_libs }}"
     state: present

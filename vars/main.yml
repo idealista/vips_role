@@ -6,7 +6,6 @@ vips_required_libs:
   - libexpat1-dev
   - libglib2.0-dev
   - libexif-dev
-  - libmagick-dev
   - liborc-0.4-0
   - liborc-0.4-dev
   - ca-certificates
