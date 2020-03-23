@@ -1,0 +1,4 @@
+---
+
+vips_optional_dependencies:
+  - libexif-dev

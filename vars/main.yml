@@ -1,14 +1,13 @@
 ---
 
 vips_required_libs:
+  - ca-certificates
   - build-essential
   - pkg-config
-  - libexpat1-dev
   - libglib2.0-dev
-  - libexif-dev
+  - libexpat1-dev
   - liborc-0.4-0
   - liborc-0.4-dev
-  - ca-certificates
 
 vips_sources_package: "vips-{{ vips_version }}.tar.gz"
 

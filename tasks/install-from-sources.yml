@@ -1,5 +1,15 @@
 ---
 
+- name: VIPS | Installing required dependencies
+  apt:
+    pkg: "{{ vips_required_libs }}"
+    state: present
+
+- name: VIPS | Installing optional dependencies
+  apt:
+    pkg: "{{ vips_optional_dependencies }}"
+    state: present
+
 - name: VIPS | Download sources package
   get_url:
     url: "{{ vips_sources_url }}"
