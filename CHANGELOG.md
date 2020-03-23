@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a changelog](https://github.com/olivierlacan/keep-a-changelog).
 
 ## [Unreleased](https://github.com/idealista/vips_role/tree/develop)
+
+### Changed
+- *(https://github.com/idealista/vips_role/pull/10) Upgrade Ansible, Molecule and Goss* @dortegau
+
 ### Fixed
 - *(https://github.com/idealista/vips_role/pull/8) Update ansible loop and test syntax* @tgjohnst
 

@@ -7,11 +7,11 @@
 
 - name: VIPS | Extract sources package
   unarchive:
-    copy: no
+    copy: false
     src: "{{ vips_tmp }}/{{ vips_sources_package }}"
     dest: "{{ vips_root_path }}"
 
-- name: VIPS | Build sources
+- name: VIPS | Build from sources
   command: "{{ item }}"
   args:
     chdir: "{{ vips_root_path }}/vips-{{ vips_version }}"

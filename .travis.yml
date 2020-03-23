@@ -1,15 +1,20 @@
 ---
+dist: xenial
 language: python
-python: "2.7.15"
-sudo: required
-
+python: "3.7"
+os: linux
 services:
   - docker
 install:
   - pip install pipenv
-  - pipenv install -r test-requirements.txt --python 2.7
+  - pipenv sync
+env:
+  jobs:
+    - "DOCKER_BASE_IMAGE=debian:jessie-slim"
+    - "DOCKER_BASE_IMAGE=debian:stretch-slim"
+    - "DOCKER_BASE_IMAGE=debian:buster-slim"
 script:
-  - pipenv run molecule test --driver docker
-
+  - export DOCKER_BASE_IMAGE=${DOCKER_BASE_IMAGE}
+  - pipenv run molecule test
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
