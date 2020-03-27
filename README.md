@@ -58,7 +58,13 @@ Use in a playbook:
 
 Look to the [defaults](defaults/main.yml) properties file to see the possible configuration properties.
 
-[orc](https://github.com/GStreamer/orc) version supported >= 0.4.20
+## Docker image
+
+There is a [Docker image uploaded to DockerHub](https://hub.docker.com/r/idealista/vips/). Could be used to generate images using the command below:
+
+```sh
+$ docker run -v /your/images:/imgs --rm idealista/vips vips rot /imgs/sample.jpg /imgs/rotated_90_degrees_sample.jpg d90    
+```
 
 ## Testing
 
