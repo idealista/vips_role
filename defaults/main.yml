@@ -9,3 +9,5 @@ vips_root_path: /opt/vips
 # Libvips optional dependencies
 # See https://libvips.github.io/libvips/install.html (Optional dependencies)
 vips_optional_dependencies: []
+
+vips_compile_time_switches: []

@@ -2,3 +2,6 @@
 
 vips_optional_dependencies:
   - libexif-dev
+
+vips_compile_time_switches:
+  - without-pangoft2

@@ -21,12 +21,21 @@
     src: "{{ vips_tmp }}/{{ vips_sources_package }}"
     dest: "{{ vips_root_path }}"
 
+- name: VIPS | Define compile-time switches
+  set_fact:
+    vips_compile_time_options_str: "{{ vips_compile_time_options_str | default('') }} {{ '--' + item }}"
+  loop: "{{ vips_compile_time_switches }}"
+
+- name: VIPS | Configure installation
+  command: ./configure {{ vips_compile_time_options_str | default('') }}
+  args:
+    chdir: "{{ vips_root_path }}/vips-{{ vips_version }}"
+
 - name: VIPS | Build from sources
   command: "{{ item }}"
   args:
     chdir: "{{ vips_root_path }}/vips-{{ vips_version }}"
   with_items:
-    - ./configure
     - make
     - make install
   tags:
