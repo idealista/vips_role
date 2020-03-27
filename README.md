@@ -1,6 +1,8 @@
 ![Logo](https://raw.githubusercontent.com/idealista/vips_role/master/logo.gif)
 
 [![Build Status](https://travis-ci.org/idealista/vips_role.svg?branch=master)](https://travis-ci.org/idealista/vips_role)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-idealista.vips__role-B62682.svg)](https://galaxy.ansible.com/idealista/vips_role)
+[![Docker Hub pulls](https://img.shields.io/docker/pulls/idealista/vips.svg)](https://hub.docker.com/r/idealista/vips/)
 
 # Vips Ansible role
 
