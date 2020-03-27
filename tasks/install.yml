@@ -17,7 +17,6 @@
     state: directory
   with_items:
     - "{{ vips_root_path }}"
-    - "{{ vips_tmp }}"
 
 - name: VIPS | Install libvips from sources
   include: install-from-sources.yml

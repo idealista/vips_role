@@ -10,15 +10,10 @@
     pkg: "{{ vips_optional_dependencies }}"
     state: present
 
-- name: VIPS | Download sources package
-  get_url:
-    url: "{{ vips_sources_url }}"
-    dest: "{{ vips_tmp }}"
-
 - name: VIPS | Extract sources package
   unarchive:
-    copy: false
-    src: "{{ vips_tmp }}/{{ vips_sources_package }}"
+    remote_src: true
+    src: "{{ vips_sources_url }}"
     dest: "{{ vips_root_path }}"
 
 - name: VIPS | Define compile-time switches

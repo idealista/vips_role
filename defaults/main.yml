@@ -4,7 +4,7 @@
 vips_version: 8.9.1
 
 # Files & Paths
-vips_root_path: /opt/vips
+vips_root_path: /usr/local/vips
 
 # Libvips optional dependencies
 # See https://libvips.github.io/libvips/install.html (Optional dependencies)

@@ -1,7 +1,39 @@
 ---
 
+# Using https://github.com/lovell/sharp-libvips/blob/576a4bf211dc15d17071d18090938fcf2afcc977/build/lin.sh#L4 as reference
 vips_optional_dependencies:
-  - libexif-dev
+  - "libjpeg62-turbo-dev"
+  - "zlib1g-dev"
+  - "libffi-dev"
+  - "libglib2.0-dev"
+  - "libxml2-dev"
+  - "libgsf-1-dev"
+  - "libexif-dev"
+  - "liblcms2-dev"
+  - "libpng-dev"
+  - "libwebp-dev"
+  - "libtiff-dev"
+  - "liborc-0.4-dev"
+  - "libfreetype6-dev"
+  - "libfontconfig1-dev"
+  - "libharfbuzz-dev"
+  - "libpixman-1-dev"
+  - "libcairo2-dev"
+  - "libfribidi-dev"
+  - "libpango1.0-dev"
+  - "librsvg2-dev"
+  - "libgif-dev"
 
 vips_compile_time_switches:
-  - without-pangoft2
+  - "enable-shared"
+  - "disable-static"
+  - "disable-dependency-tracking"
+  - "disable-debug"
+  - "disable-introspection"
+  - "without-python"
+  - "without-fftw"
+  - "without-magick"
+  - "without-pangoft2"
+  - "without-ppm"
+  - "without-analyze"
+  - "without-radiance"
