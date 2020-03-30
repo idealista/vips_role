@@ -1,6 +1,8 @@
 ![Logo](https://raw.githubusercontent.com/idealista/vips_role/master/logo.gif)
 
 [![Build Status](https://travis-ci.org/idealista/vips_role.svg?branch=master)](https://travis-ci.org/idealista/vips_role)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-idealista.vips__role-B62682.svg)](https://galaxy.ansible.com/idealista/vips_role)
+[![Docker Hub pulls](https://img.shields.io/docker/pulls/idealista/vips.svg)](https://hub.docker.com/r/idealista/vips/)
 
 # Vips Ansible role
 
@@ -56,7 +58,13 @@ Use in a playbook:
 
 Look to the [defaults](defaults/main.yml) properties file to see the possible configuration properties.
 
-[orc](https://github.com/GStreamer/orc) version supported >= 0.4.20
+## Docker image
+
+There is a [Docker image uploaded to DockerHub](https://hub.docker.com/r/idealista/vips/). Could be used to generate images using the command below:
+
+```sh
+$ docker run -v /your/images:/imgs --rm idealista/vips vips rot /imgs/sample.jpg /imgs/rotated_90_degrees_sample.jpg d90    
+```
 
 ## Testing
 

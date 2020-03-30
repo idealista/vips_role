@@ -7,14 +7,13 @@ command:
     timeout: 10000
 
 file:
-  /opt/vips:
-    filetype: directory
-    exists: true
-  /buildvips:
+  /usr/local/src/vips:
     filetype: directory
     exists: true
 
 package:
+  unzip:
+    installed: true
   build-essential:
     installed: true
   pkg-config:
@@ -30,4 +29,46 @@ package:
   liborc-0.4-dev:
     installed: true
   ca-certificates:
+    installed: true
+  libjpeg62-turbo-dev:
+    installed: true
+  zlib1g-dev:
+    installed: true
+  libffi-dev:
+    installed: true
+  libglib2.0-dev:
+    installed: true
+  libxml2-dev:
+    installed: true
+  libgsf-1-dev:
+    installed: true
+  libexif-dev:
+    installed: true
+  liblcms2-dev:
+    installed: true
+  libpng-dev:
+    installed: true
+  libwebp-dev:
+    installed: true
+  libtiff-dev:
+    installed: true
+  liborc-0.4-dev:
+    installed: true
+  libfreetype6-dev:
+    installed: true
+  libfontconfig1-dev:
+    installed: true
+  libharfbuzz-dev:
+    installed: true
+  libpixman-1-dev:
+    installed: true
+  libcairo2-dev:
+    installed: true
+  libfribidi-dev:
+    installed: true
+  libpango1.0-dev:
+    installed: true
+  librsvg2-dev:
+    installed: true
+  libgif-dev:
     installed: true

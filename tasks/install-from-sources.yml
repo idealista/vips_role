@@ -10,27 +10,30 @@
     pkg: "{{ vips_optional_dependencies }}"
     state: present
 
-- name: VIPS | Download sources package
-  get_url:
-    url: "{{ vips_sources_url }}"
-    dest: "{{ vips_tmp }}"
-
 - name: VIPS | Extract sources package
   unarchive:
-    copy: false
-    src: "{{ vips_tmp }}/{{ vips_sources_package }}"
+    remote_src: true
+    src: "{{ vips_sources_url }}"
     dest: "{{ vips_root_path }}"
 
-- name: VIPS | Build from sources
-  command: "{{ item }}"
+- name: VIPS | Define compile-time switches
+  set_fact:
+    vips_compile_time_options_str: "{{ vips_compile_time_options_str | default('') }} {{ '--' + item }}"
+  loop: "{{ vips_compile_time_switches }}"
+
+- name: VIPS | Configure installation
+  command: ./configure {{ vips_compile_time_options_str | default('') }}
   args:
     chdir: "{{ vips_root_path }}/vips-{{ vips_version }}"
-  with_items:
-    - ./configure
-    - make
-    - make install
-  tags:
-    skip_ansible_lint
+
+- name: VIPS | Build from sources
+  make:
+    chdir: "{{ vips_root_path }}/vips-{{ vips_version }}"
+
+- name: VIPS | Install
+  make:
+    chdir: "{{ vips_root_path }}/vips-{{ vips_version }}"
+    target: install
 
 - name: VIPS | Update glib headers
   shell: cp /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h /usr/include; ldconfig
