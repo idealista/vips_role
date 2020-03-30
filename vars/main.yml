@@ -1,6 +1,7 @@
 ---
 
 vips_required_libs:
+  - unzip
   - ca-certificates
   - build-essential
   - pkg-config

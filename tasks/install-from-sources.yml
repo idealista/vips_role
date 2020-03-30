@@ -27,14 +27,13 @@
     chdir: "{{ vips_root_path }}/vips-{{ vips_version }}"
 
 - name: VIPS | Build from sources
-  command: "{{ item }}"
-  args:
+  make:
     chdir: "{{ vips_root_path }}/vips-{{ vips_version }}"
-  with_items:
-    - make
-    - make install
-  tags:
-    skip_ansible_lint
+
+- name: VIPS | Install
+  make:
+    chdir: "{{ vips_root_path }}/vips-{{ vips_version }}"
+    target: install
 
 - name: VIPS | Update glib headers
   shell: cp /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h /usr/include; ldconfig

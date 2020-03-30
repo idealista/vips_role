@@ -12,6 +12,8 @@ file:
     exists: true
 
 package:
+  unzip:
+    installed: true
   build-essential:
     installed: true
   pkg-config:
