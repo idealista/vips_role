@@ -7,7 +7,7 @@ command:
     timeout: 10000
 
 file:
-  /usr/local/vips:
+  /usr/local/src/vips:
     filetype: directory
     exists: true
 
