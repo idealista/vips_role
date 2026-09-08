@@ -1,3 +1,0 @@
-ansible==2.9.6.0
-molecule==2.22.0
-docker

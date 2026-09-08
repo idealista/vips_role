@@ -4,6 +4,12 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased](https://github.com/idealista/vips_role/tree/develop)
 
+## [2.0.1](https://github.com/idealista/vips_role/tree/2.0.1)
+### Fixed
+- *[#23](https://github.com/idealista/vips_role/issues/23) Correct the Goss badge, restore the command to run the tests, and document the 2.0.0 move of `libexif-dev` and `libmagick-dev` to `vips_optional_dependencies`* @danieljesus
+### Removed
+- *[#23](https://github.com/idealista/vips_role/issues/23) Drop the orphaned `test-requirements.txt`, superseded by the Pipfile* @danieljesus
+
 ## [2.0.0](https://github.com/idealista/vips_role/tree/2.0.0)
 Major release: `vips_force_reinstall` is gone, `vips_version` now defaults to 8.9.1, `min_ansible_version` is 2.9.6.0, and consumers that relied on `libexif-dev` or `libmagick-dev` being pulled in by `vips_required_libs` must now ask for them through `vips_optional_dependencies`.
 ### Added
