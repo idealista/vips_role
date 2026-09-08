@@ -1,5 +1,0 @@
----
-
-- hosts: vips
-  roles:
-    - vips_role

@@ -1,9 +1,10 @@
 ![Logo](https://raw.githubusercontent.com/idealista/vips_role/master/logo.gif)
 
 [![Build Status](https://travis-ci.org/idealista/vips_role.svg?branch=master)](https://travis-ci.org/idealista/vips_role)
+
 # Vips Ansible role
 
-This ansible role installs libvips image processing library in a debian environment.
+This Ansible role installs libvips image processing library in a Debian environment.
 
 - [Getting Started](#getting-started)
 	- [Prerequisities](#prerequisities)
@@ -18,14 +19,14 @@ This ansible role installs libvips image processing library in a debian environm
 
 ## Getting Started
 
-These instructions will get you a copy of the role for your ansible playbook. Once launched, it will install [libvips](https://libvips.github.io/libvips/) libraries.
+These instructions will get you a copy of the role for your Ansible Playbook. Once launched, it will install [libvips](https://libvips.github.io/libvips/) libraries.
 
 ### Prerequisities
 
-Ansible 2.3.1.0 version installed.
+Ansible 2.9.6.0 version installed.
 Inventory destination should be a Debian environment.
 
-For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Docker](https://www.docker.com/) and [Vagrant](https://www.vagrantup.com/) as driver (with [landrush](https://github.com/vagrant-landrush/landrush) plugin) and [VirtualBox](https://www.virtualbox.org/) as provider.
+For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Docker](https://www.docker.com/).
 
 ### Installing
 
@@ -33,7 +34,7 @@ Create or add to your roles dependency file (e.g requirements.yml):
 
 ```
 - src: idealista.vips_role
-  version: 1.0.0
+  version: 2.0.0
   name: vips
 ```
 
@@ -60,18 +61,15 @@ Look to the [defaults](defaults/main.yml) properties file to see the possible co
 ## Testing
 
 ```sh
-pipenv install -r test-requirements.txt --python 2.7
-pipenv run molecule test --driver docker
+$ pip install pipenv
+$ pipenv sync
 ```
 
 ## Built With
 
-![Ansible](https://img.shields.io/badge/ansible-2.3.1.0-green.svg)
-
-![Molecule](https://img.shields.io/badge/molecule-1.25.0-green.svg)
-
-![Goss](https://img.shields.io/badge/goss-0.3.5-green.svg)
-
+![Ansible](https://img.shields.io/badge/ansible-2.9.6.0-green.svg)
+![Molecule](https://img.shields.io/badge/molecule-2.22.0-green.svg)
+![Goss](https://img.shields.io/badge/goss-0.3.7-green.svg)
 
 ## Versioning
 

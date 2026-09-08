@@ -1,0 +1,33 @@
+command:
+  vips -v:
+    exit-status: 0
+    stdout:
+      - "/vips-8.9.1/"
+    stderr: []
+    timeout: 10000
+
+file:
+  /opt/vips:
+    filetype: directory
+    exists: true
+  /buildvips:
+    filetype: directory
+    exists: true
+
+package:
+  build-essential:
+    installed: true
+  pkg-config:
+    installed: true
+  libexpat1-dev:
+    installed: true
+  libglib2.0-dev:
+    installed: true
+  libexif-dev:
+    installed: true
+  liborc-0.4-0:
+    installed: true
+  liborc-0.4-dev:
+    installed: true
+  ca-certificates:
+    installed: true
