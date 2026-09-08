@@ -1,6 +1,6 @@
 ![Logo](https://raw.githubusercontent.com/idealista/vips_role/master/logo.gif)
 
-[![Build Status](https://travis-ci.org/idealista/vips_role.svg?branch=master)](https://travis-ci.org/idealista/vips_role)
+[![Build Status](https://app.travis-ci.com/idealista/vips_role.svg?branch=master)](https://app.travis-ci.com/idealista/vips_role)
 
 # Vips Ansible role
 
@@ -26,7 +26,7 @@ These instructions will get you a copy of the role for your Ansible Playbook. On
 Ansible 2.9.6.0 version installed.
 Inventory destination should be a Debian environment.
 
-For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Docker](https://www.docker.com/).
+For testing purposes, Python 3.7 with [Molecule](https://molecule.readthedocs.io/) and [Docker](https://www.docker.com/).
 
 ### Installing
 
@@ -34,7 +34,7 @@ Create or add to your roles dependency file (e.g requirements.yml):
 
 ```
 - src: idealista.vips_role
-  version: 2.0.0
+  version: 2.0.1
   name: vips
 ```
 
@@ -58,18 +58,37 @@ Look to the [defaults](defaults/main.yml) properties file to see the possible co
 
 [orc](https://github.com/GStreamer/orc) version supported >= 0.4.20
 
+### Upgrading from 1.x
+
+`libexif-dev` and `libmagick-dev` are no longer part of `vips_required_libs`. They moved to `vips_optional_dependencies`, which is empty by default, so a playbook that relied on them being installed will stop getting them without any error. Ask for them explicitly:
+
+```yaml
+vips_optional_dependencies:
+  - libexif-dev
+  - libmagick-dev
+```
+
+`vips_force_reinstall` was removed in 2.0.0.
+
 ## Testing
 
 ```sh
 $ pip install pipenv
 $ pipenv sync
+$ pipenv run molecule test
+```
+
+The scenario runs against `debian:buster-slim` by default. `DOCKER_BASE_IMAGE` selects another of the tested suites:
+
+```sh
+$ DOCKER_BASE_IMAGE=debian:stretch-slim pipenv run molecule test
 ```
 
 ## Built With
 
 ![Ansible](https://img.shields.io/badge/ansible-2.9.6.0-green.svg)
 ![Molecule](https://img.shields.io/badge/molecule-2.22.0-green.svg)
-![Goss](https://img.shields.io/badge/goss-0.3.7-green.svg)
+![Goss](https://img.shields.io/badge/goss-0.3.10-green.svg)
 
 ## Versioning
 
