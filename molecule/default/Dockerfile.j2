@@ -6,6 +6,20 @@ FROM {{ item.registry.url }}/{{ item.image }}
 FROM {{ item.image }}
 {% endif %}
 
+# jessie, stretch and buster are all EOL: their suites were moved out of
+# deb.debian.org / security.debian.org into archive.debian.org, and jessie's
+# archive signing keys have expired on top of that.
+RUN if [ -f /etc/apt/sources.list ] && grep -qE 'jessie|stretch|buster' /etc/apt/sources.list; then \
+      sed -i -e 's|http://security.debian.org/debian-security|http://archive.debian.org/debian-security|g' \
+             -e 's|http://security.debian.org|http://archive.debian.org/debian-security|g' \
+             -e 's|http://deb.debian.org|http://archive.debian.org|g' \
+             -e '/-updates/d' \
+             /etc/apt/sources.list; \
+      if grep -q jessie /etc/apt/sources.list; then \
+        sed -i 's|^deb |deb [trusted=yes] |' /etc/apt/sources.list; \
+      fi; \
+    fi
+
 RUN if [ $(command -v apt-get) ]; then apt-get update && apt-get install -y python sudo bash ca-certificates gnupg  systemd systemd-sysv && apt-get clean; \
      elif [ $(command -v dnf) ]; then dnf makecache && dnf --assumeyes install python3 sudo python36-devel python3-dnf bash systemd && dnf clean all; \
     elif [ $(command -v yum) ]; then yum makecache fast && yum install -y python sudo yum-plugin-ovl bash systemd systemd-sysv && sed -i 's/plugins=0/plugins=1/g' /etc/yum.conf && yum clean all; fi

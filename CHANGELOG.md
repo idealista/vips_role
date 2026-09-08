@@ -7,6 +7,9 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased](https://github.com/idealista/vips_role/tree/develop)
 
+### Fixed
+- *[#20](https://github.com/idealista/vips_role/issues/20) Point the molecule containers at archive.debian.org, all three tested Debian suites are EOL* @danieljesus
+
 ### Changed
 - *(https://github.com/idealista/vips_role/pull/12) Allow to override optional dependencies* @dortegau
 - *(https://github.com/idealista/vips_role/pull/10) Upgrade Ansible, Molecule and Goss* @dortegau
