@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased](https://github.com/idealista/vips_role/tree/develop)
 
+## [2.0.2](https://github.com/idealista/vips_role/tree/2.0.2)
+### Changed
+- *[#26](https://github.com/idealista/vips_role/issues/26) Declare an `author` and use `galaxy_tags` instead of the deprecated `categories` in the role metadata* @danieljesus
+
 ## [2.0.1](https://github.com/idealista/vips_role/tree/2.0.1)
 ### Fixed
 - *[#23](https://github.com/idealista/vips_role/issues/23) Correct the Goss badge, restore the command to run the tests, and document the 2.0.0 move of `libexif-dev` and `libmagick-dev` to `vips_optional_dependencies`* @danieljesus
